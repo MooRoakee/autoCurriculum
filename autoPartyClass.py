@@ -1,7 +1,7 @@
 import pyautogui as au
 import time
 
-SLEEP_TIME = 60
+SLEEP_TIME = 30
 con = 'continue.png'
 red_dot = 'red_dot.png'
 pause = 'pause.png'
@@ -10,7 +10,7 @@ pause = 'pause.png'
 def click_continue_dialog():
     try:
         x, y = au.locateCenterOnScreen(con, confidence=0.3)
-        au.click(x, y + 55)
+        au.click(x, y + 210)
     except TypeError:
         print("cant find continue dialog")
 
@@ -18,7 +18,7 @@ def click_continue_dialog():
 def click_red_dot():
     try:
         x, y = au.locateCenterOnScreen(red_dot, confidence=0.9)
-        au.click(x + 100, y + 40)
+        au.click(x + 90, y + 80)
     except TypeError:
         print("cant find red dot")
 
@@ -36,28 +36,24 @@ def down_count(x):
 def if_finish():
     try:
         x, y = au.locateCenterOnScreen(pause, confidence=0.9)
-        au.click(769, 653)
         click_red_dot()
 
-
         time.sleep(2)
-        click_begin()
+        click_tips()
     except TypeError:
         return
 
 
-def click_begin():
-    try:
-        x, y = au.locateCenterOnScreen(con, confidence=0.3)
-
-        au.click(995, 669)
-    except TypeError:
-        exit()
+def click_tips():
+    au.click(870, 687)
 
 
 if __name__ == "__main__":
     while 1:
+        time.sleep(2)
         if_finish()
+
+        down_count(280)
 
         down_count(SLEEP_TIME)
 
