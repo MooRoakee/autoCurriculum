@@ -25,7 +25,7 @@ def click_red_dot():
 
 def down_count(x):
     print("count down: ")
-    print("%d " % x)
+    print("%d " % x, end="")
     while x:
         time.sleep(1)
         x = x - 1
@@ -45,7 +45,7 @@ def if_finish():
 
 
 def click_tips():
-    au.click(870, 687)
+    au.click(1230, 1162)
 
 
 if __name__ == "__main__":

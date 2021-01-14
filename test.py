@@ -1,4 +1,4 @@
 import pyautogui as au
 
-x, y = au.locateCenterOnScreen('red_dot.png', confidence=0.9)
-au.moveTo(x + 90, y + 80)
+x, y = au.locateCenterOnScreen('continue.png', confidence=0.8)
+au.moveTo(x, y + 210)
